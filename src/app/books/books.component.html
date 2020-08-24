@@ -1,5 +1,5 @@
 <h3>BookList</h3>
-<button class="btn btn-primary" routerLink="/create">Add Book</button>
+<button class="btn btn-success" routerLink="/create">Add Book</button>
 <table class="table table-bordered">
   <thead>
     <tr>
@@ -18,7 +18,7 @@
       <td>{{b.author}}</td>
       <td>{{b.description}}</td>
       <td><button class="btn btn-primary" [routerLink] = "['/edit',b.id]">Edit</button></td>
-      <td><button (click) = "deleteBook(b.id)" class="btn btn-primary">Delete</button></td>
+      <td><button (click) = "deleteBook(b.id)" class="btn btn-danger">Delete</button></td>
     </tr>
   </tbody>
 </table>
