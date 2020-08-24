@@ -22,16 +22,21 @@ export class CreateBookComponent implements OnInit {
     })
   }
 
-
-
   postBook() {
     let data = this.createBookForm.value;
     this.bookService.postBook(data)
     .then(response => {
+      this.createBookForm = this.fb.group({
+        title: '',
+        author: '',
+        description: ''
+      })
       console.log('Thêm thành công');
     })
     .catch(error => {
     });
   }
+
+
 
 }

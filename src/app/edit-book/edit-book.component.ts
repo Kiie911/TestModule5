@@ -37,6 +37,7 @@ export class EditBookComponent implements OnInit {
     let data = this.editBookForm.value;
     this.bookService.putBook(this.bookId,data)
     .then(response => {
+
       console.log('Sửa thành công');
     })
     .catch(error => {
