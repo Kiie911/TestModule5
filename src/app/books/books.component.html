@@ -1,0 +1,24 @@
+<h3>BookList</h3>
+<button class="btn btn-primary" routerLink="/create">Add Book</button>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Title</th>
+      <th scope="col">Author</th>
+      <th scope="col">Description</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor='let b of books'>
+      <th scope="row">{{b.id}}</th>
+      <td><a [routerLink] = "['/info',b.id]">{{b.title}}</a></td>
+      <td>{{b.author}}</td>
+      <td>{{b.description}}</td>
+      <td><button class="btn btn-primary" [routerLink] = "['/edit',b.id]">Edit</button></td>
+      <td><button (click) = "deleteBook(b.id)" class="btn btn-primary">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
